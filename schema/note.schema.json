@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/docvault/note.schema.json",
+  "title": "docvault note frontmatter",
+  "type": "object",
+  "required": ["title", "created", "type"],
+  "additionalProperties": true,
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "type": {
+      "enum": ["project", "reference", "journal", "archive"]
+    },
+    "status": {
+      "enum": ["needs-review", "processed", "archived"]
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      }
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "do-not-process": {
+      "type": "boolean"
+    },
+    "review_note": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
