@@ -4,6 +4,18 @@ Docvault is a Git-backed inbox-zero vault for personal documents. It exists to t
 
 ## Language
 
+**Public Skeleton**:
+The distributable repository state intended for public use, documentation, policy examples, schema, empty directories, and synthetic samples.
+_Avoid_: Live vault, private vault
+
+**Private Vault Instance**:
+A user's local operating copy that may contain real Captures, real Filed Notes, private attachments, editor metadata, run artifacts, and active work orders.
+_Avoid_: Public repo, template
+
+**Local Operating State**:
+Machine-local or workflow-local support state for a Private Vault Instance, not part of the Public Skeleton.
+_Avoid_: Public artifact, shared policy
+
 **Capture**:
 A raw Markdown note that has been dropped into the vault before filing. A Capture may be rough, incomplete, or unclassified, but v1 Captures are always `.md` files.
 _Avoid_: Draft, source document, input file
